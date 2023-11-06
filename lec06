@@ -1,0 +1,9 @@
+print("answer is," + var)
+print("answer is,", var)
+print(f"answer is {var}")
+python use more bits to store data types than C
+floating point impresion exist in both C and Python,
+but integer overflow does not exist in Python
+in Python, varibles can exist outside a loop which should be curly based by C
+return can break out a function and return a value.
+double blanc lines between functions is a norm

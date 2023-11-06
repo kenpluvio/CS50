@@ -1,0 +1,13 @@
+C memory --> 
+machine code
+------------
+globals
+------------
+heap : for malloc, allocate memory
+
+
+
+
+
+stack : function variables temporary stored
+------------

@@ -1,0 +1,7 @@
+liner search --> O(n)
+binary search --> O(logn)
+O(n^2) > O(nlogn) > O(n) > O(logn) > O(1)
+O is the upper bound
+omega is the lower bound
+theta is what upper bound equal to lower bound
+return value could be a way of subsititute a if~else loop for return could end the function.

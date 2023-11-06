@@ -1,0 +1,11 @@
+the whole concept of how program worked could be simplified as : preprocessing, compiling, assembling, linking
+preprocessing is to read the header file and locate the function prototype and paste it into current program.
+compiling is to convert source code to assembly code.
+assembling is to convert assembly code to machine code A.K.A binary code.
+link is to combine all these header code and function code together.
+plaintext -- encryption -- ciphertext
+caesar cipher is one encryption which adds each character with a pre-determined number into a new character.
+function prototype is used as a teaser of function programed below main funcion.
+on the end of each string, there is a "\0", AKA null to imply an end.
+%i could use to directly convert string[i] to a corresponding ASCII index.
+echo $? can return the int main() function value, which could be programmed previously as an error code.

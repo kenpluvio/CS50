@@ -1,0 +1,8 @@
+queue is FIFO
+enqueue is put something at the end of queue
+dequeue is extract the first thing out of the queue
+stack is LIFO
+push is letting something on the top of a stack
+pop is letting something on the top of a stack
+link list, compared to array, can dynamicly enlarge itself by append, prepend
+The reason list exists is that it can save the need for relloc every time
