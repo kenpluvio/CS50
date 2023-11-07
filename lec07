@@ -1,0 +1,11 @@
+relational database requires each column on the table should have a one on one relation, if there is on to many (bidirectional), CREATE a new table.
+Create  Insert
+Read
+Update
+Delete  Drop
+The key of relational database is JOIN... ON...
+JOIN and nested SELECT could connect multiple tables, but JOIN can reconstitute those instead. Also SELECT multiple table in the same time and WHERE different table keys equal to others corresponding keys could connect tables together.
+WHERE column LIKE ('xxx x%') means find someones' name like xxx x...
+CREATE INDEX column_index ON tablename (column) 
+could make a table to a B-tree, not a binary tree.
+Drop Bobby Tables
