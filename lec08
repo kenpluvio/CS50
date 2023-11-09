@@ -1,0 +1,5 @@
+router also contains recently used website, responsible as a little DNS system.
+By right click any item on website and select 'inspect', we can take a glance of how those things were programmed by html.
+normal demonstrate name, foobar: foo, bar, baz
+in JavaScript, use camel case to replace '-' in CSS style.
+Like 'phone-number' in CSS is 'phoneNumber' in JavaScrpit for the same varible.
