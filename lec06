@@ -7,3 +7,10 @@ but integer overflow does not exist in Python
 in Python, varibles can exist outside a loop which should be curly based by C
 return can break out a function and return a value.
 double blanc lines between functions is a norm
+list.append(new node) === list += [new node]
+print("xx", end="") in Python === printf("xx") without \0 in C
+In Python, list has slice function, like argv[0:1] means output elements start from index 0 to index 1.
+sys.exit(), sys.argv[]...
+echo $0 can see what is the number of sys.exit(number)
+for name in names: is a linear search default in Python
+x, y = y, x
