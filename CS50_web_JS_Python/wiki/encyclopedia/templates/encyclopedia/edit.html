@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+{% load widget_tweaks %}
+
+{% block title %}
+    Edit {{title}} page
+{% endblock %}
+
+{% block body %}
+    <h1>Edit {{title}} page</h1>
+
+    <form action="{% url 'encyclopedia:edit' title %}", method="post">
+        {% csrf_token %}
+        {{ form_field }}
+        <input type="submit">
+    </form>
+
+{% endblock %}

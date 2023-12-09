@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search List
+{% endblock %}
+
+{% block body %}
+    <h1>All Pages</h1>
+
+    <ul>
+        {% for result in result_list %}
+            <li><a href="{% url 'encyclopedia:showMD' result %}">{{ result }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
