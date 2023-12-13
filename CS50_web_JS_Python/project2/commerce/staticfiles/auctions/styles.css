@@ -1,0 +1,19 @@
+body {
+    padding: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* or row, depending on your layout needs */
+    max-width: 300px; /* adjust as needed */
+    margin: auto; /* to center the form on the page */
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 16px;
+}

@@ -1,0 +1,28 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block body %}
+{% load static %}
+    <h2>Create List</h2>
+    <form class="form-floating" action="{% url 'create_list' %}" method="post">
+        {% csrf_token %}
+        <div class="form-floating">
+            {{ form.title }}
+            {{ form.title.label_tag }}
+        </div>
+        <div class="form-floating">
+            {{ form.description }}
+            {{ form.description.label_tag }}
+        </div>
+        <div class="form-floating">
+            {{ form.starting_bid }}
+            {{ form.starting_bid.label_tag }}
+        </div>
+        <div class="form-floating">
+            {{ form.image_url }}
+            {{ form.image_url.label_tag }}
+        </div>
+        <input class="btn btn-primary" type="submit" value="Submit">        
+    </form>
+{% endblock %}
