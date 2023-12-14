@@ -3,7 +3,6 @@
 {% load widget_tweaks %}
 
 {% block body %}
-{% load static %}
     <h2>Create List</h2>
     <form class="form-floating" action="{% url 'create_list' %}" method="post">
         {% csrf_token %}

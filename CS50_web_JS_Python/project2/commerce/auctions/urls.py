@@ -8,7 +8,11 @@ urlpatterns = [
     path("login", views.login_view, name="login"),
     path("logout", views.logout_view, name="logout"),
     path("register", views.register, name="register"),
-    path("create_list", views.create_list, name="create_list")
+    path("create_list", views.create_list, name="create_list"),
+    path("details/<int:auctionId>", views.details, name="details"),
+    path("watchlist/<int:auctionId>", views.watchlist, name="watchlist"),
+    path("bid", views.bid, name="bid"),
+    path("remove_watchlist/<int:auctionId>", views.remove_watchlist, name="remove_watchlist")
 ]
 
 if settings.DEBUG:

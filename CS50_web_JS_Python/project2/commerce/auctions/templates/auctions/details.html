@@ -1,0 +1,42 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block body %}
+    <h2>Auction details</h2>
+    
+    <h3>{{ auction.title }}</h3>
+    <p>Description: {{ auction.description }}</p>
+    <p>Current price: {{ auction.starting_bid }}</p>
+    {% if request.user.is_authenticated %}
+        <form method="post" action="{% url 'bid' %}" style="margin: 0">
+            {% csrf_token %}
+            <div class="form-floating">
+                {{ bid_price.price }}
+                {{ bid_price.price.label_tag }}
+            </div>
+            <input class="btn btn-primary" type="submit" value="Bid">
+        </form>
+    {% endif %}
+    {% if auction.image_url %}
+        <img src="{{auction.image_url}}" alt="image" height="100px">
+    {% endif %}
+    <!-- check whether user is real-->
+    {% if request.user.is_authenticated %}
+        <form method="post" action="{% url 'watchlist' auction.id %}" style="margin: 0">
+            {% csrf_token %}
+            <input class="btn btn-primary" type="submit" value="Add to Watchlist">
+        </form>
+    {% endif %}
+    {% if rm_flg == 1 %}
+        <form method="post" action="{% url 'remove_watchlist' auction.id %}" style="margin: 0">
+            {% csrf_token %}
+            <!-- Your form fields go here if needed -->
+            <input class="btn btn-primary" type="submit" value="Remove this item">
+        </form>
+    {% elif rm_flg == 2 %}
+        <p>add successful</p>
+    {% elif rm_flg == 3 %}
+        <p>remove successful</p>
+    {% endif %}
+{% endblock %}

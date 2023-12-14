@@ -17,3 +17,18 @@ input {
     padding: 8px;
     margin-bottom: 16px;
 }
+.auction_item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.auction_item > * {
+    flex-grow: 1;
+}
+.auction_image {
+    height: 120px;
+}
+.btn {
+    width: 200px
+}

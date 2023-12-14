@@ -3,5 +3,21 @@
 {% block body %}
     <h2>Active Listings</h2>
 
-    TODO
+    {% for auction in all_auctions %}
+        <hr>
+        <div class="auction_item">
+            <div>
+                <h3><a href="{% url 'details' auction.id %}">Title: {{ auction.title }}</a></h3>
+                <p>Description: {{ auction.description }}</p>
+                <p>Current price: {{ auction.starting_bid }}</p>
+            </div>
+            <div class="auction_image">
+                {% if not auction.image_url %}
+                {% else %}
+                    <img src="{{ auction.image_url }}" alt="image" height="100%">
+                {% endif %}
+            </div>
+        </div>
+        
+    {% endfor %}
 {% endblock %}
