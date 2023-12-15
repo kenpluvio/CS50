@@ -21,6 +21,9 @@
         <div class="form-floating">
             {{ form.image_url }}
             {{ form.image_url.label_tag }}
+            {% if form.errors %}
+                <p class="error">Form submission failed. Please check your inputs.</p>
+            {% endif %}
         </div>
         <input class="btn btn-primary" type="submit" value="Submit">        
     </form>

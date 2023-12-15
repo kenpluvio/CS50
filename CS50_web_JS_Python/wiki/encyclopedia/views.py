@@ -27,7 +27,7 @@ def index(request):
             search_query = form.cleaned_data['SearchFor']
             if search_query in util.list_entries():
                 # Redirect to another view with the cleaned data
-                return redirect('encyclopedia:showMD', query=search_query)
+                return redirect('encyclopedia:showMD', name=search_query)
             elif any(search_query in s for s in util.list_entries()):
                 return render(request, "encyclopedia/Search_list.html", {
                     "result_list" : [s for s in util.list_entries() if search_query in s]

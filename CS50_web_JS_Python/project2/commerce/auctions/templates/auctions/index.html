@@ -6,6 +6,7 @@
     {% for auction in all_auctions %}
         <hr>
         <div class="auction_item">
+            
             <div>
                 <h3><a href="{% url 'details' auction.id %}">Title: {{ auction.title }}</a></h3>
                 <p>Description: {{ auction.description }}</p>
@@ -18,6 +19,5 @@
                 {% endif %}
             </div>
         </div>
-        
     {% endfor %}
 {% endblock %}
