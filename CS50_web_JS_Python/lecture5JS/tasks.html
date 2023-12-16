@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en>">
+    <head>
+        <title>Tasks</title>
+        <script>  
+            document.addEventListener('DOMContentLoaded', () => {
+                let submitb = document.querySelector('#submit')
+                let taskb = document.querySelector('#task')
+                let tasksb = document.querySelector('#tasks')
+                // By default, submit button is disabled
+                submitb.disabled = true;
+                task.onkeyup = () => {
+                    if (taskb.value.length > 0) {
+                        submitb.disabled = false;
+                    }
+                    else {
+                        submitb.disabled = true;
+                    }
+                    
+                }
+                document.querySelector('form').onsubmit = () => {
+                    const task = taskb.value;
+                    const li = document.createElement('li');
+                    li.innerHTML = task;
+
+                    tasksb.append(li);
+                    // Clear input field after adding a task
+                    taskb.value = '';
+                    submitb.disabled = true;
+                    // Stop form from submitting
+                    return false;
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Tasks</h1>
+        <ul id="tasks">
+        </ul>
+        <form>
+            <input id="task" placeholder="New Task" type="text">
+            <input id="submit" type="submit">
+        </form>
+    </body>
+</html>

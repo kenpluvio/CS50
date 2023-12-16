@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Currency</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                var myHeaders = new Headers();
+                myHeaders.append("apikey", "z9wxCPsMctFAxCxwQU8DM8fiFKahRORr");
+
+                var requestOptions = {
+                    method: 'GET',
+                    redirect: 'follow',
+                    headers: myHeaders
+                };
+
+                // Attach event listener to the form
+                document.querySelector('form').addEventListener('submit', (event) => {
+                    event.preventDefault(); // Prevent the default form submission
+
+                    fetch("https://api.apilayer.com/exchangerates_data/latest?symbols=&base=CAD", requestOptions)
+                    .then(response => response.json())
+                    .then(data => {
+                        const currency = document.querySelector('#currency').value.toUpperCase();
+                        const rateToCNY = data.rates.CNY;
+                        const rateToCurrency = data.rates[currency];
+                        if (rateToCurrency !== undefined) {
+                            document.querySelector('#resultForCurrency').innerHTML = `rate is ${rateToCurrency.toFixed(3)}`;
+                        } else {
+                            document.querySelector('#resultForCurrency').innerHTML = 'Invalid Currency';
+                        }
+                        document.querySelector('#resultForCNY').innerHTML = `rate is ${rateToCNY.toFixed(3)}`;
+                    })
+                    .catch(error => console.log('error', error));
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <form>
+            <input id="currency" placeholder="Currency" type="text">
+            <input type="submit" value="Convert">
+        </form>
+        <div id="resultForCNY"></div>
+        <div id="resultForCurrency"></div>
+    </body>
+</html>

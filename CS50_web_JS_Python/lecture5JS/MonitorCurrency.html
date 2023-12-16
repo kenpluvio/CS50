@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Currency</title>
+        <script>
+            const millisecondsInOneDay = 24 * 60 * 60 * 1000; // 1 day = 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
+            const daysToCount = 6;
+            const millisecondsInFiveDays = daysToCount * millisecondsInOneDay;
+
+            document.addEventListener('DOMContentLoaded', () => {
+                setInterval(function () {
+                    var myHeaders = new Headers();
+                    myHeaders.append("apikey", "z9wxCPsMctFAxCxwQU8DM8fiFKahRORr");
+
+                    var requestOptions = {
+                        method: 'GET',
+                        redirect: 'follow',
+                        headers: myHeaders
+                    };
+                    fetch("https://api.apilayer.com/exchangerates_data/latest?symbols=&base=CAD", requestOptions)
+                        .then(response => response.json())
+                        .then(data => {
+                            const rateToCNY = data.rates.CNY;
+                            document.querySelector('#resultForCNY').innerHTML = `rate is ${rateToCNY.toFixed(3)}`;
+                        })
+                        .catch(error => console.log('error', error));
+                }, millisecondsInFiveDays)
+            })
+        </script>
+    </head>
+    <body>
+        <div id="resultForCNY"></div>
+    </body>
+</html>
