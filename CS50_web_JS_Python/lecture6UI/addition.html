@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Counter</title>
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="text/babel">
+            function App() {
+
+                const [num1, setNum1] = React.useState(1);
+                const [num2, setNum2] = React.useState(2);
+                const [state, setState] = React.useState({
+                    num1: 1,
+                    num2: 2
+                });
+                React.useState({})
+
+                return (
+                    <div>
+                        <div></div>
+                    </div>
+                )
+            }
+            ReactDOM.render(<App />, document.querySelector("#app"));
+
+        </script>
+    </body>
+</html>

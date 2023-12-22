@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>React</title>
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="app"></div>
+        <div id="math"></div>
+        <script type="text/babel">
+            function Hello(props) {
+                return (
+                    <div>Hello! {props.name}</div>
+                );
+            }
+            function Math1() {
+                const x = 1;
+                const y = 2;
+                return (
+                    <div>{ x + y }</div>
+                )
+            }
+            function App() {
+                return (
+                    <div>
+                        <Hello name="Harry" />
+                        <Hello name="Tom" />
+                    </div>
+                )
+            }
+
+            ReactDOM.render(<App />, document.querySelector("#app"));
+            ReactDOM.render(<Math1 />, document.querySelector("#math"));
+        </script>
+    </body>
+</html>
